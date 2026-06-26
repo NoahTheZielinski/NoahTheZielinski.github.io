@@ -277,3 +277,29 @@ svg * {
   #arrow-left  { left: 7px; }
   #arrow-right { right: 7px; }
 }
+
+.card.card-embedded {
+  padding: 0;
+  overflow: hidden;
+}
+
+.card.card-embedded .header {
+  padding: 12px 24px;
+  border-bottom: 0.5px solid var(--bg-border);
+}
+
+.embed-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.embed-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
