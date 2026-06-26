@@ -1,0 +1,61 @@
+<html lang="en-US">
+    <head>
+        <title>Jesse Guy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <div id="width-bar">
+        <div id="bar-fill"></div>
+        <svg id="arrow-left" class="bar-arrow" viewBox="0 0 20 15" width="20" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="11,2 4,7.5 11,13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="17,2 10,7.5 17,13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="bar-pct">50%</span>
+        <svg id="arrow-right" class="bar-arrow" viewBox="0 0 20 15" width="20" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="9,2 16,7.5 9,13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="3,2 10,7.5 3,13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+    <body>
+        <div id="content_container" class="content_container"></div>
+        
+        <div id="overlay" class="overlay">
+            <svg viewBox="0 0 200 100">
+                <!-- eye (centered at 100,50, scaled to ~1/5 of original) -->
+                <path id="lid-top-outer" fill="none" stroke="currentColor" stroke-width="0.75" d="M 100,50 C 100,50 100,50 100,50" stroke-linecap="round"/>
+                <path id="lid-bot-outer" fill="none" stroke="currentColor" stroke-width="0.75" d="M 100,50 C 100,50 100,50 100,50" stroke-linecap="round"/>
+                <path id="lid-top-inner" fill="none" stroke="currentColor" stroke-width="0.75" d="M 100,50 C 100,50 100,50 100,50" stroke-linecap="round"/>
+                <path id="lid-bot-inner" fill="none" stroke="currentColor" stroke-width="0.75" d="M 100,50 C 100,50 100,50 100,50" stroke-linecap="round"/>
+                <circle id="pupil" cx="100" cy="50" r="0" fill="none" stroke="currentColor" stroke-width="0.75"/>
+
+                <!-- N (left of eye) -->
+                <path id="n-left"  fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" d="M 72,44 L 72,56"/>
+                <path id="n-diag"  fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" d="M 72,44 L 80,56"/>
+                <path id="n-right" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" d="M 80,44 L 80,56"/>
+
+                <!-- Z (right of eye) -->
+                <path id="z-top"  fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" d="M 120,44 L 128,44"/>
+                <path id="z-diag" fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" d="M 128,44 L 120,56"/>
+                <path id="z-bot"  fill="none" stroke="currentColor" stroke-width="0.75" stroke-linecap="round" stroke-dasharray="1000" stroke-dashoffset="1000" d="M 120,56 L 128,56"/>
+
+                <!-- Progress Circle -->
+                <circle id="progress-circle-background" cx="100" cy="50" r="3" fill="none" stroke="var(--bg-border)" stroke-width="1.5" transform="rotate(-90, 100, 50)"/>
+
+                <clipPath id="progress-clip">
+                    <path id="progress-clip-path" stroke-linecap="round" d=""/>
+                    <circle id="progress-tip-s" r="0" />
+                    <circle id="progress-tip-e" r="0"/>
+                </clipPath>
+
+
+                <circle id="progress-dots" cx="100" cy="50" r="3"
+                fill="none" style="stroke: var(--fg-accent)"
+                stroke-width="1" stroke-linecap="round"
+                transform="rotate(-90, 100, 50)"
+                clip-path="url(#progress-clip)"/>
+            </svg>
+        </div>
+        
+        <script src="main.js" type="module"></script>
+    </body>
+</html>
